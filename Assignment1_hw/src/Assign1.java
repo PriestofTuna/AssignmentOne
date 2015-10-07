@@ -1,55 +1,78 @@
 import javax.swing.JOptionPane;
 
-public class Assignment3 {
-
+public class Assignment345 {
 	public enum AccountType {
-		Admin, Staff, Student
+		Admin, Student, Staff, WrongAccount
 	};
+	// WrongAccount is for whenever an account does not equal the TrueUserPass
+	// below
 
 	public static void main(String[] args) {
-		String user = "cqd2292";
-		String pass = "password";
-		// String user2 = "cdinh";
-		// String pass2 = "password1";
-		// String user3 = "Tanes";
-		// String pass3 = "password2";
-		AccountType[] account = { AccountType.Admin, AccountType.Staff, AccountType.Student };
-		String euser, epass;
-		int limit = 3;
 
-		euser = JOptionPane.showInputDialog("Enter Username");
+		AccountType[] choices = { AccountType.Admin, AccountType.Staff, AccountType.Student };
 
-		while (euser != user) {
+		String TrueUser, TruePassword, password, TrueUserPass, user;
+		TrueUser = ("name");
+		TruePassword = ("password");
+		TrueUserPass = (TrueUser + TruePassword);
+		TrueUserPass.equals(AccountType.Admin);
 
-			if (euser.equals(user)) {
-				epass = JOptionPane.showInputDialog("Enter Password");
-				if (epass.equals(pass)) {
-					// JOptionPane.showMessageDialog(null, "Hello");
-					AccountType select = (AccountType) JOptionPane.showInputDialog(null, "Select account type",
-							"Account Type", JOptionPane.INFORMATION_MESSAGE, null, account, account[0]);
-					switch (select) {
-					case Admin:
-						JOptionPane.showMessageDialog(null, "Welcome Admin! You can update and read file.");
-						break;
-					case Staff:
-						JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, delete file.");
-						break;
-					case Student:
-						JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
-						break;
-					default:
-						JOptionPane.showMessageDialog(null, "Good Bye!");
-					}
-				} else {
-					// JOptionPane.showMessageDialog(null, "Wrong password");
+		int limit = 3, x = 0;
 
+		user = JOptionPane.showInputDialog("Input your Username");
+		// x = Integer.parseInt(user);
+		while (user != TrueUser && (x < (limit))) {
+
+			if (user.equals(TrueUser)) {
+
+				password = JOptionPane.showInputDialog("Input your password");
+
+				if (password.equals(TruePassword)) {
+					break;
+
+					// if (user + password == ("namepassword")) {
+
+				} else if (password != TruePassword) {
+					
+					JOptionPane.showMessageDialog(null, "Incorrect password, please Input your password");
+					x = (x + 1);
+				}else {
+					break;
 				}
-			} else {
-				// System.out.println("Hello");
-			}
-			JOptionPane.showMessageDialog(null, "Invalid Username or Password");
-			euser = JOptionPane.showInputDialog("Enter Username");
-		}
 
+			} else if (user != TrueUser) {
+				JOptionPane.showMessageDialog(null, "Invalid Username");
+				x = (x + 1);
+				user = JOptionPane.showInputDialog("Input your Username");
+				
+			} else {
+             break;
+			}
+
+		}
+		while (x >= limit) {
+			JOptionPane.showMessageDialog(null,
+					"You have been locked out of your account due to too many attempts to log in, please contact the administrator");
+		}
+		AccountType select = (AccountType) JOptionPane.showInputDialog(null, "select your account.", "Account Type",
+				JOptionPane.INFORMATION_MESSAGE, null, choices, choices[0]);
+		JOptionPane.showMessageDialog(null, x);
+		
+		switch (select) {
+		case Admin:
+			JOptionPane.showMessageDialog(null, "Welcome Admin! You can update and read file.");
+			break;
+		case Student:
+			JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
+			break;
+		case Staff:
+			JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, delete file.");
+			break;
+		case WrongAccount:
+			JOptionPane.showMessageDialog(null, "");
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "Enjoy your stay");
+		}
 	}
 }
