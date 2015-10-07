@@ -13,6 +13,7 @@ public class Assignment3 {
 		// String pass2 = "password1";
 		// String user3 = "Tanes";
 		// String pass3 = "password2";
+
 		AccountType[] account = { AccountType.Admin, AccountType.Staff, AccountType.Student };
 		String euser, epass;
 		int limit = 3;
@@ -38,17 +39,17 @@ public class Assignment3 {
 						JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
 						break;
 					default:
-						JOptionPane.showMessageDialog(null, "Good Bye!");
+						// JOptionPane.showMessageDialog(null, "Good Bye!");
 					}
+					break;
 				} else {
-					// JOptionPane.showMessageDialog(null, "Wrong password");
-
+					JOptionPane.showMessageDialog(null, "Invalid password");
 				}
 			} else {
-				// System.out.println("Hello");
+				JOptionPane.showMessageDialog(null, "Invalid Username");
+				euser = JOptionPane.showInputDialog("Enter Username");
 			}
-			JOptionPane.showMessageDialog(null, "Invalid Username or Password");
-			euser = JOptionPane.showInputDialog("Enter Username");
+
 		}
 
 	}
