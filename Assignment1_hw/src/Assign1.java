@@ -1,128 +1,50 @@
-import javax.swing.JOptionPane;
-
-public class Assignment32 {
-	public enum AccountType {
-		Admin, Student, Staff, WrongAccount
-	};
-
-	/**
-	 * Author, Karl Lyttek
-	 * 
-	 * @param args
-	 */
-	// WrongAccount is for whenever an account does not equal the TrueUserPass
-	// below
-
-	public static void main(String[] args) {
-
-		AccountType[] choices = { AccountType.Admin, AccountType.Staff, AccountType.Student };
-
-		String TrueUser, TruePassword, password, TrueUserPass, user, CreatedAccount;
-		TrueUser = ("name");
-		int Legitimacy = (3), Test = (4);
-		TruePassword = ("password");
-		TrueUserPass = (TrueUser + TruePassword);
-		TrueUserPass.equals(AccountType.Admin);
-		int limit = 3, x = 0;
-
-		user = JOptionPane.showInputDialog("Input your Username");
-		// x = Integer.parseInt(user);
-		while (user != TrueUser && (x < (limit))) {
-
-			if (user.equals(TrueUser)) {
-				password = JOptionPane.showInputDialog("Input your password");
-
-				if (password.equals(TruePassword)) {
-					CreatedAccount = (user + password);
-					AccountType select = (AccountType) JOptionPane.showInputDialog(null, "select your account.",
-							"Account Type", JOptionPane.INFORMATION_MESSAGE, null, choices, choices[0]);
-					//JOptionPane.showMessageDialog(null, x);
-					while (Legitimacy != Test) {
-					if (CreatedAccount.equals(TrueUserPass)) {
-						select.equals(TrueUserPass);
-						switch (select) {
-						case Admin:
-
-							break;
-						case Student:
-
-							break;
-						case Staff:
-							;
-							break;
-						case WrongAccount:
-
-							break;
-						default:
-						}
-
-						if (select.equals(AccountType.Admin)) {
-							Legitimacy = (Legitimacy+1);
-							JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, delete file.");
-							break;
-						}else {
-							
-						}
-					    } else {
-					    	System.out.print("Pain, pain and suffering without end...");
-					    }
-					}
-						
-					
-					break;
-
-				} else if (password != TruePassword)
-
-				{
-
-					JOptionPane.showMessageDialog(null, "Incorrect password, please Input your password");
-					x = (x + 1);
-				} else {
-					break;
-				}
-
-			} else if (user != TrueUser) {
-				JOptionPane.showMessageDialog(null, "Invalid Username");
-				x = (x + 1);
-				user = JOptionPane.showInputDialog("Input your Username");
-
-			} else {
-				break;
-			}
-
-		}
-		while (x >= limit) {
-			JOptionPane.showMessageDialog(null,
-					"You have been locked out of your account due to too many attempts to log in, please contact the administrator");
-		}
-
-		// here
-        /**
-		AccountType select = (AccountType) JOptionPane.showInputDialog(null, "select your account.", "Account Type",
-				JOptionPane.INFORMATION_MESSAGE, null, choices, choices[0]);
-		JOptionPane.showMessageDialog(null, x);
-
-		switch (select) {
-		case Admin:
-			JOptionPane.showMessageDialog(null, "Welcome Admin! You can update and read file.");
-			break;
-		case Student:
-			JOptionPane.showMessageDialog(null, "Welcome Student! You can only read file.");
-			break;
-		case Staff:
-			JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, delete file.");
-			break;
-		case WrongAccount:
-			JOptionPane.showMessageDialog(null, "");
-			break;
-		default:
-			JOptionPane.showMessageDialog(null, "Enjoy your stay");
-
-			if (select.equals(AccountType.Admin)) {
-				JOptionPane.showMessageDialog(null, "Welcome Admin! You can update and read files.");
-			} else {
-			}
-		}*/
-        
-	}
-}
+import javax.swing.JOptionPane; 
+2 
+ 
+3 public class Assignment333 { 
+4 	public enum AccountType { 
+5 		Admin, Student, Staff, 
+6 	}; 
+7 
+ 
+8 	/** 
+9 	 * Author, Karl Lyttek 
+10 	 *  
+11 	 *  
+12 	 * @param args 
+13 	 */ 
+14 	public static void main(String[] args) { 
+15 		AccountType[] choices = { AccountType.Admin, AccountType.Staff, 
+16 				AccountType.Student }; 
+17 		String TrueUser, TruePassword, password, TrueUserPass, user, CreatedAccount; 
+18 		TrueUser = ("name"); 
+19 		int Legitimacy = (3), Test = (4); 
+20 		TruePassword = ("password"); 
+21 		TrueUserPass = (TrueUser + TruePassword); 
+22 		TrueUserPass.equals(AccountType.Admin); 
+23 		int limit = 3, x = 0; 
+24 		user = JOptionPane.showInputDialog("Input your Username"); 
+                
+	
+	
+                }else if (password != TruePassword) { 
+91 					JOptionPane.showMessageDialog(null, 
+92 							"Incorrect password, please Input your password"); 
+93 					x = (x + 1); 
+94 				} else { 
+95 					break; 
+96 				} 
+97 			} else if (user != TrueUser) { 
+98 				JOptionPane.showMessageDialog(null, "Invalid Username"); 
+99 				x = (x + 1); 
+100 				user = JOptionPane.showInputDialog("Input your Username"); 
+101 			} else { 
+102 				break; 
+103 			} 
+104 		} 
+105 		while (x >= limit) { 
+106 			JOptionPane 
+107 					.showMessageDialog( 
+108 							null, 
+109 							"You have been locked out of your account due to too many attempts to log in, please contact the administrator"); 
+110 			break; 
