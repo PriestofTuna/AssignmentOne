@@ -24,7 +24,18 @@ import javax.swing.JOptionPane;
 22 		TrueUserPass.equals(AccountType.Admin); 
 23 		int limit = 3, x = 0; 
 24 		user = JOptionPane.showInputDialog("Input your Username"); 
-                
+                if (user.equals(TrueUser)) { 
+27 			password = JOptionPane.showInputDialog("Input your password"); 
+28 			if (password.equals(TruePassword)) { 
+29 				CreatedAccount = (user + password); 
+30 				// created account can equal any number of accounts, inputed 
+31 				// username and inputed password 
+32 				AccountType select = (AccountType) JOptionPane 
+33 				.showInputDialog(null, "select your account.", 
+34 				"Account Type", 
+35 				JOptionPane.INFORMATION_MESSAGE, null, 
+36 				choices, choices[0]); 
+
 	
 	
                 }else if (password != TruePassword) { 
